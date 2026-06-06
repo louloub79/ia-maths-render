@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Autoriser ton site web à appeler l'API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -17,25 +16,18 @@ def repondre(question: str) -> str:
 
     if "pythagore" in q:
         return "Dans un triangle rectangle : hypotenuse² = côté1² + côté2²."
-
     if "thalès" in q or "thales" in q:
         return "Thalès : si deux droites sont parallèles, les longueurs correspondantes sont proportionnelles."
-
     if "fraction" in q:
         return "Addition : même dénominateur. Multiplication : numérateur×numérateur et dénominateur×dénominateur."
-
     if "équation" in q or "equation" in q:
         return "Équation ax + b = c : on isole x → x = (c - b) / a."
-
     if "proportionnalité" in q:
         return "Proportionnalité : on multiplie ou divise par le même nombre."
-
     if "statistique" in q or "moyenne" in q:
         return "Moyenne = somme des valeurs / nombre de valeurs."
-
     if "probabilité" in q:
         return "Probabilité = cas favorables / cas possibles."
-
     if "fonction" in q:
         return "Une fonction associe à x un nombre f(x). Exemple : f(x)=2x+3."
 
